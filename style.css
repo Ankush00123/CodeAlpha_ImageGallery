@@ -1,0 +1,193 @@
+body
+{
+    background-color: #121212;
+}
+
+.header_container
+{
+    display: flex;
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+}
+
+h1
+{
+    color: #00ffae;
+    font-weight: bold;
+    text-shadow: 
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+#filter_buttons
+{
+    display: flex;
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    justify-items: center;
+    background-color: #1e1e1e;
+}
+
+.filter_text
+{
+    width: 120px;
+    height: 50px;
+    font-size: 35px;
+    text-align: center;
+    padding-top: 10px;
+    color: #ccc;
+}
+
+.filters
+{
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #2a2a2a;
+    color: #eee;
+    border: 1px solid #333;
+    margin: 5px;
+    transition: all 0.1s ease;
+}
+
+.filters:hover
+{
+    background-color: #333;
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 255, 174, 0.3);
+}
+
+.filters:active
+{
+    background-color: #444;
+    transform: scale(0.95);
+    box-shadow: 0px 5px 15px rgba(0, 255, 174, 0.3);
+}
+
+.active-filter
+{
+    background-color: #00ffae;
+    color: #121212;
+    box-shadow: 0px 5px 15px rgba(0, 255, 174, 0.5);
+    transform: scale(1.05);
+}
+
+#images_div
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 15px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.image_item
+{
+    width: 100%;
+    max-width: 350px;
+    height: 220px;
+    border: 1px solid #333;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.image_item:hover
+{
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 255, 174, 0.2);
+}
+
+#lightbox
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#lightbox_image
+{
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    max-height: 90vh;
+    object-fit: cover;
+}
+
+#next_button, #prev_button, #close_button
+{
+    position: fixed;
+    width: 30px;
+    height: 55px;
+    top: 50%;
+    color: #eee;
+    background-color: #1e1e1e;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    transition: all 0.1s ease;
+    border-radius: 8px;
+}
+
+#close_button
+{
+    width: 55px;
+    border-radius: 30px;
+    top: 20px;
+    right: 20px;
+}
+
+#prev_button
+{
+    left: 20px;
+}
+
+#next_button
+{
+    right: 20px;
+}
+
+#next_button:hover, #prev_button:hover, #close_button:hover
+{
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 255, 174, 0.3);
+}
+
+#next_button:active, #prev_button:active, #close_button:active
+{
+    transform: scale(0.95);
+    box-shadow: 0px 5px 15px rgba(0, 255, 174, 0.4);
+}
+
+#lightbox.hidden
+{
+    display: none;
+}
+
+#lightbox.show
+{
+    display: flex;
+}
+
+.blur
+{
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
